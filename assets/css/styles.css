@@ -1,0 +1,298 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap");
+
+:root {
+  --header-height: 3.5rem;
+  --hue: 255;
+  --first-color: hsl(var(--hue), 60%, 64%);
+  --first-color-alt: hsl(var(--hue), 80%, 56%);
+  --first-color-alt-2: hsl(var(--hue), 60%, 56%);
+  --first-color-light: hsl(var(--hue), 60%, 74%);
+  --title-color: #ffffff;
+  --text-color: #cfcfcf;
+  --text-color-light: #999999;
+  --body-color: #000000;
+  --container-color: #0a0a0a;
+  --body-font: "Montserrat", sans-serif;
+  --second-font: "Unbounded", sans-serif;
+  --biggest-font-size: 2rem;
+  --bigger-font-size: 1.75rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 3rem;
+    --bigger-font-size: 2rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* { box-sizing: border-box; padding:0; margin:0; }
+html { scroll-behavior: smooth; }
+body, button { font-family: var(--body-font); font-size: var(--normal-font-size); color: var(--text-color); background: linear-gradient(135deg,#000,#4169E1); background-attachment: fixed; background-size: cover;}
+button { outline:none; border:none;}
+h1,h2,h3,h4{color:var(--title-color); font-family: var(--second-font); font-weight: var(--font-semi-bold);}
+ul { list-style:none;}
+a{text-decoration:none;}
+img{display:block; max-width:100%; height:auto;}
+
+/*=============== HOME ===============*/
+.home {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.home__video {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  z-index: -2;
+  filter: brightness(0.6);
+}
+
+.home__container { position:relative; display:grid; gap:2rem; justify-items:center; text-align:center; }
+
+.home__greeting { font-size: var(--h2-font-size); font-weight: var(--font-regular); color: var(--first-color);}
+.home__name { font-size: var(--biggest-font-size);}
+.home-perfil { width: 320px; border-radius:50%; margin-top:1rem; border: 4px solid var(--first-color-alt); }
+
+.home__social { display:flex; gap:1rem; justify-content:center; margin-top:1rem;}
+.home__social-link{ color:var(--title-color); font-size:1.5rem; transition:color .4s, transform .4s;}
+.home__social-link:hover{color: var(--first-color); transform: translateY(-5px);}
+.home__cv{display:inline-flex; align-items:center; gap:.5rem; margin-top:1.5rem; padding:0.75rem 1.5rem; border:2px solid var(--first-color); border-radius:2rem; color:var(--title-color); font-weight: var(--font-medium); transition: all .4s;}
+.home__cv:hover{background: var(--first-color); color:#000;}
+
+/*=============== ABOUT ===============*/
+.about__container { display:grid; grid-template-columns:1fr; gap:2rem; text-align:center;}
+.about__description { font-size: var(--h3-font-size); color:var(--text-color-light); margin-bottom:1.5rem;}
+.about__description b{color: var(--first-color);}
+.about__image{position:relative;}
+.about__perfil { width:220px; border-radius:50%; border:3px solid var(--first-color);}
+
+/*=============== PROJECTS ===============*/
+.projects__container { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:2rem;}
+.projects__card { background: rgba(255,255,255,0.05); border-radius:1rem; padding:1.5rem; backdrop-filter:blur(10px); display:grid; gap:1rem; text-align:center; transition: transform 0.4s;}
+.projects__card:hover { transform:translateY(-5px) scale(1.02);}
+.projects__title{ font-size:var(--h2-font-size); color:var(--title-color);}
+.projects__description{ font-size:var(--small-font-size); color:var(--text-color);}
+
+/*=============== BUTTONS ===============*/
+.button{background-color:transparent; border:2px solid var(--first-color); color:var(--title-color); padding:0.75rem 1.5rem; border-radius:2rem; display:inline-flex; align-items:center; gap:.5rem; transition: all .4s;}
+.button:hover{background-color:var(--first-color); color:#000;}
+
+/*=============== CONTACT ===============*/
+.contact__info{display:grid; grid-template-columns:1fr; gap:1.5rem; margin-top:2rem;}
+.contact__card{background: rgba(255,255,255,0.05); border-radius:1rem; padding:1.5rem; backdrop-filter:blur(10px); text-align:center;}
+.contact__icon{font-size:2rem; color:var(--first-color); margin-bottom:0.5rem;}
+.contact__title{font-size:var(--h2-font-size);}
+.contact__data{font-size:var(--h3-font-size); margin-bottom:1rem;}
+
+/*=============== FOOTER ===============*/
+.footer{text-align:center; padding:2rem 0; color:var(--text-color-light);}
+
+/*=============== MEDIA QUERIES ===============*/
+@media screen and (min-width:768px){
+  .home-perfil{width:400px;}
+  .about__container{grid-template-columns:1fr 1fr; text-align:left;}
+}
+@media screen and (min-width:1150px){
+  .home-perfil{width:500px;}
+}
+/*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.85); /* semi-transparent background */
+  z-index: var(--z-fixed);
+}
+
+.nav {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* logo left, links right */
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.nav__logo {
+  font-family: var(--second-font);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  font-size: var(--h2-font-size);
+}
+
+.nav__list {
+  display: flex;
+  gap: 2rem; /* space between links */
+}
+
+.nav__link {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  font-size: var(--normal-font-size);
+  transition: color 0.4s, text-shadow 0.4s;
+}
+
+.nav__link:hover {
+  color: var(--first-color);
+  text-shadow: 0 4px 8px var(--first-color);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width:768px){
+  .nav__list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  /* CONTACT */
+.contact__info {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr; /* Default: stacked on small screens */
+  margin-top: 2rem;
+}
+
+.contact__card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.contact__icon {
+  font-size: 2rem;
+  color: var(--first-color);
+  margin-bottom: 1rem;
+}
+
+/* Make side-by-side on larger screens */
+@media screen and (min-width: 768px) {
+  .contact__info {
+    grid-template-columns: repeat(2, 1fr); /* Two columns side by side */
+  }
+}
+/* About container grid */
+.about__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* About cards */
+.about__data {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+/* Divider line between first two and last two cards */
+.about__data:nth-child(1)::after,
+.about__data:nth-child(3)::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -1rem; /* adjust gap */
+  width: 2px;
+  height: 80%;
+  background-color: #ccc;
+}
+
+/* Responsive: hide dividers on mobile */
+@media (max-width: 768px) {
+  .about__data:nth-child(1)::after,
+  .about__data:nth-child(3)::after {
+    display: none;
+  }
+}
+
+/* About list styling */
+.about__list {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  color: var(--text-color, #555);
+}
+/* About container for profile cards */
+.about__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  text-align: left;
+}
+
+/* Individual profile cards */
+.about__data {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Section subtitles */
+.about__data h3 {
+  font-size: var(--h3-font-size);
+  margin-bottom: 1rem;
+  color: var(--first-color);
+}
+
+/* About list styling */
+.about__list {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  color: var(--text-color);
+}
+
+/* Divider lines between first two and last two cards */
+.about__data:nth-child(1)::after,
+.about__data:nth-child(3)::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -1rem;
+  width: 2px;
+  height: 80%;
+  background-color: #555;
+}
+
+/* Responsive: hide vertical dividers on mobile */
+@media screen and (max-width: 768px) {
+  .about__container {
+    grid-template-columns: 1fr;
+  }
+
+  .about__data::after {
+    display: none;
+  }
+}
+
+}
